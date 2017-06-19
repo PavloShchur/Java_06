@@ -15,7 +15,6 @@ public class Main {
 		while (work) {
 			Menu menu = new Menu();
 			menu.menu();
-			;
 			String choice = Main.scanner.next();
 
 			switch (choice) {
@@ -55,10 +54,6 @@ public class Main {
 			}
 			case "9": {
 				parlament.showMaxBriberFromFraction();
-				break;
-			}
-			case "10": {
-				work = false;
 				break;
 			}
 			default: {

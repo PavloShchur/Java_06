@@ -1,11 +1,10 @@
 package parlament;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class Parlament {
 
@@ -14,8 +13,6 @@ public class Parlament {
 	Deputy deputy = new Deputy();
 	Fraction fraction = new Fraction();
 	private static Parlament parlament;
-
-	private List<Fraction> fractions = new ArrayList<>();
 
 	public static Parlament getInstance() {
 		if (parlament == null) {
@@ -31,16 +28,15 @@ public class Parlament {
 			mapParlament.put(new Fraction(fractionName), deputy);
 			System.out.println(mapParlament);
 		} else {
-			Iterator<Entry<Fraction, Deputy>> iterator = mapParlament.entrySet().iterator();
-			while (iterator.hasNext()) {
-				Map.Entry<Fraction, Deputy> entry = iterator.next();
+			Set<Entry<Fraction, Deputy>> entries = mapParlament.entrySet();
+			Iterator<Entry<Fraction, Deputy>> entryIterator = entries.iterator();
+			while (entryIterator.hasNext()) {
+				Map.Entry<Fraction, Deputy> entry = entryIterator.next();
 				if (entry.getKey().getNameOFFraction().equals(fractionName)) {
 					System.out.println("Sorry, but we already have such a fraction.");
 				} else {
-					System.out.println("FIX");
 					mapParlament.put(new Fraction(fractionName), deputy);
 				}
-				System.out.println(entry.getKey().getNameOFFraction() + "\n" + entry.getValue().getName());
 			}
 			System.out.println(mapParlament);
 		}
@@ -66,32 +62,10 @@ public class Parlament {
 	}
 
 	public void deleteFractionFromParlament() {
-		System.out.println("Enter name of fraction for delete");
-
-		String fractionName = Main.scanner.next();
-		if (fractions.contains(new Fraction(fractionName))) {
-			System.out.println("This fraction already exist");
-			Iterator<Fraction> iterator = fractions.iterator();
-			while (iterator.hasNext()) {
-				if (iterator.next().getNameOFFraction().equals(fractionName)) {
-					iterator.remove();
-				}
-			}
-		} else {
-			System.out.println("Sorry, but we don't have such a fraction.");
-		}
 
 	}
 
 	public void showAllFraction() {
-		if (fractions.isEmpty()) {
-			System.out.println("Don't have any fraction");
-		} else {
-			System.out.println("List of fractions:");
-			for (Fraction fraction : fractions) {
-				System.out.println(fraction);
-			}
-		}
 
 	}
 
@@ -158,7 +132,7 @@ public class Parlament {
 
 		boolean exist = false;
 
-		for (Fraction fraction : fractions) {
+		for (Fraction fraction : fraction.getFractions()) {
 
 			if (fraction.getNameOFFraction().equalsIgnoreCase(nameFraction)) {
 

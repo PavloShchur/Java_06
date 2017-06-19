@@ -1,8 +1,6 @@
 
 package parlament;
 
-import java.util.Scanner;
-
 public class Deputy extends Human {
 
 	private String name;
