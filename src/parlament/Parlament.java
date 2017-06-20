@@ -1,14 +1,15 @@
 package parlament;
 
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
+import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Parlament {
 
-	public static Map<Fraction, Deputy> mapParlament = new HashMap<Fraction, Deputy>();
+	public static Map<Fraction, Deputy> mapParlament = new ConcurrentHashMap<Fraction, Deputy>();
+	 Scanner scannerParlament = new Scanner(System.in);
 
 	Deputy deputy = new Deputy();
 	Fraction fraction = new Fraction();
@@ -23,13 +24,12 @@ public class Parlament {
 
 	public void addFractionIntoParlament() {
 		System.out.println("Enter name of new fraction");
-		String fractionName = Main.scanner.next();
+		String fractionName = scannerParlament.next();
 		if (mapParlament.isEmpty()) {
 			mapParlament.put(new Fraction(fractionName), deputy);
 			System.out.println(mapParlament);
 		} else {
-			Set<Entry<Fraction, Deputy>> entries = mapParlament.entrySet();
-			Iterator<Entry<Fraction, Deputy>> entryIterator = entries.iterator();
+			Iterator<Entry<Fraction, Deputy>> entryIterator = mapParlament.entrySet().iterator();
 			while (entryIterator.hasNext()) {
 				Map.Entry<Fraction, Deputy> entry = entryIterator.next();
 				if (entry.getKey().getNameOFFraction().equals(fractionName)) {
@@ -45,7 +45,7 @@ public class Parlament {
 
 	public void showSomeFractionInParlament() {
 		System.out.println("Enter name of new fraction");
-		String fractionName = Main.scanner.next();
+		String fractionName = scannerParlament.next();
 		boolean fractionExist = false;
 
 		Iterator<Entry<Fraction, Deputy>> iterator = mapParlament.entrySet().iterator();
@@ -72,7 +72,7 @@ public class Parlament {
 	public void addDeputyIntoFraction() {
 		System.out.println("Enter name of fraction");
 
-		String nameFraction = Main.scanner.next();
+		String nameFraction = scannerParlament.next();
 
 		boolean exist = false;
 
@@ -81,13 +81,13 @@ public class Parlament {
 			Map.Entry<Fraction, Deputy> entry = iterator.next();
 			if (entry.getKey().getNameOFFraction().equals(nameFraction)) {
 				System.out.println("Enter name of deputy");
-				String name = Main.scanner.next();
+				String name = scannerParlament.next();
 				System.out.println("Enter surname of deputy");
-				String surname = Main.scanner.next();
+				String surname = scannerParlament.next();
 				System.out.println("Enter age of deputy");
-				int age = Main.scanner.nextInt();
+				int age = scannerParlament.nextInt();
 				System.out.println("Is this deputy briber or not?");
-				boolean isBriber = Main.scanner.nextBoolean();
+				boolean isBriber = scannerParlament.nextBoolean();
 				mapParlament.put(new Fraction(nameFraction), new Deputy(name, surname, age, isBriber));
 
 				fraction.addDeputyIntoAFraction();
@@ -105,7 +105,7 @@ public class Parlament {
 
 		System.out.println("Enter name of deputy which ypu want to delete deputy");
 
-		String nameOfDeputy = Main.scanner.next();
+		String nameOfDeputy = scannerParlament.next();
 
 		boolean exist = false;
 
@@ -128,7 +128,7 @@ public class Parlament {
 
 		System.out.println("enter name of fraction for clean");
 
-		String nameFraction = Main.scanner.next();
+		String nameFraction = scannerParlament.next();
 
 		boolean exist = false;
 
@@ -152,7 +152,7 @@ public class Parlament {
 
 		System.out.println("Enter name of fraction");
 
-		String nameFraction = Main.scanner.next();
+		String nameFraction = scannerParlament.next();
 
 		boolean exist = false;
 
@@ -178,7 +178,7 @@ public class Parlament {
 
 		System.out.println("Enter name of fraction");
 
-		String nameFraction = Main.scanner.next();
+		String nameFraction = scannerParlament.next();
 
 		boolean exist = false;
 
@@ -209,7 +209,7 @@ public class Parlament {
 
 		System.out.println("Enter name of fraction ");
 
-		String nameFraction = Main.scanner.next();
+		String nameFraction = scannerParlament.next();
 
 		boolean exist = false;
 

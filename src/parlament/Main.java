@@ -15,7 +15,7 @@ public class Main {
 		while (work) {
 			Menu menu = new Menu();
 			menu.menu();
-			String choice = Main.scanner.next();
+			String choice = scanner.next();
 
 			switch (choice) {
 
