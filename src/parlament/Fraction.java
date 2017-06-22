@@ -1,10 +1,11 @@
 package parlament;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fraction {
 
-	private List<Fraction> fractions;
+	private List<Fraction> fractions  = new ArrayList<Fraction>();
 	
 
 	private String nameOFFraction;

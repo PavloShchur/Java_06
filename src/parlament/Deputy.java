@@ -1,13 +1,17 @@
 
 package parlament;
 
+import java.util.List;
+
 public class Deputy extends Human {
-	
+
 	private String name;
 	private String surname;
 	private int age;
 	private boolean briber;
 	private int sizeOfBribe;
+
+	List<Deputy> deputies;
 
 	public Deputy() {
 		super();
@@ -72,7 +76,7 @@ public class Deputy extends Human {
 			System.out.println("This deputy doesn't take the bribe");
 		} else {
 			System.out.println("How many money you want to give this deputy");
-			int money =  Main.scanner.nextInt();
+			int money = Main.scanner.nextInt();
 			if (money > 5000) {
 				System.out.println("Police catch the briber.");
 			} else {
