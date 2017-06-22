@@ -37,7 +37,6 @@ public class Main {
 			}
 			case "5": {
 				parlament.showSomeFractionInParlament();
-				;
 				break;
 			}
 			case "6": {

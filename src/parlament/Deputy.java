@@ -63,7 +63,8 @@ public class Deputy extends Human {
 
 	@Override
 	public String toString() {
-		return "Deputy [age=" + age + ", briber=" + briber + ", sizeOfBribe=" + sizeOfBribe + "]";
+		return "Deputy [name=" + name + ", surname=" + surname + ", age=" + age + ", briber=" + briber
+				+ ", sizeOfBribe=" + sizeOfBribe + "]";
 	}
 
 	public void giveBribe() {

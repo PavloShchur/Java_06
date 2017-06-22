@@ -13,14 +13,7 @@ public class Parlament {
 
 	Deputy deputy = new Deputy();
 	Fraction fraction = new Fraction();
-	private static Parlament parlament;
-
-	public static Parlament getInstance() {
-		if (parlament == null) {
-			parlament = new Parlament();
-		}
-		return parlament;
-	}
+	
 
 	public void addFractionIntoParlament() {
 		System.out.println("Enter name of new fraction");
@@ -28,14 +21,16 @@ public class Parlament {
 		if (mapParlament.isEmpty()) {
 			mapParlament.put(new Fraction(fractionName), deputy);
 			System.out.println(mapParlament);
+			System.out.println(mapParlament.size());
 		} else {
 			Iterator<Entry<Fraction, Deputy>> entryIterator = mapParlament.entrySet().iterator();
 			while (entryIterator.hasNext()) {
-				Map.Entry<Fraction, Deputy> entry = entryIterator.next();
+				Entry<Fraction, Deputy> entry = entryIterator.next();
 				if (entry.getKey().getNameOFFraction().equals(fractionName)) {
 					System.out.println("Sorry, but we already have such a fraction.");
 				} else {
 					mapParlament.put(new Fraction(fractionName), deputy);
+					System.out.println(mapParlament.size());
 				}
 			}
 			System.out.println(mapParlament);
