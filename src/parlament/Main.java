@@ -22,18 +22,18 @@ public class Main {
 				parlament.addFractionIntoParlament();
 				break;
 			}
-//			case "2": {
-//				parlament.deleteFractionFromParlament();
-//				break;
-//			}
-//			case "3": {
-//				parlament.cleanFraction();
-//				break;
-//			}
-//			case "4": {
-//				parlament.showAllFraction();
-//				break;
-//			}
+			case "2": {
+				parlament.deleteFractionFromParlament();
+				break;
+			}
+			case "3": {
+				parlament.cleanFraction();
+				break;
+			}
+			case "4": {
+				parlament.showAllFraction();
+				break;
+			}
 //			case "5": {
 //				parlament.showSomeFractionInParlament();
 //				break;
