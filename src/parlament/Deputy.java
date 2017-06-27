@@ -71,17 +71,4 @@ public class Deputy extends Human {
 				+ ", sizeOfBribe=" + sizeOfBribe + "]";
 	}
 
-	public void giveBribe() {
-		if (!briber) {
-			System.out.println("This deputy doesn't take the bribe");
-		} else {
-			System.out.println("How many money you want to give this deputy");
-			int money = Main.scanner.nextInt();
-			if (money > 5000) {
-				System.out.println("Police catch the briber.");
-			} else {
-				sizeOfBribe += money;
-			}
-		}
-	}
 }

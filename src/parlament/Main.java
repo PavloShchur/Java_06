@@ -31,36 +31,42 @@ public class Main {
 				break;
 			}
 			case "4": {
-				parlament.showAllFraction();
+				parlament.showAllFractions();
 				break;
 			}
-//			case "5": {
-//				parlament.showSomeFractionInParlament();
-//				break;
-//			}
-//			case "6": {
-//				parlament.addDeputyIntoFraction();
-//				break;
-//			}
-//			case "7": {
-//				parlament.deleteDeputyFromFraction();
-//				break;
-//			}
-//			case "8": {
-//				parlament.showAllBribersInFraction();
-//				break;
-//			}
-//			case "9": {
-//				parlament.showMaxBriberFromFraction();
-//				break;
-//			}
+			case "5": {
+				parlament.showSomeFractionInParlament();
+				break;
+			}
+			case "6": {
+				parlament.addDeputyIntoFraction();
+				break;
+			}
+			case "7": {
+				parlament.deleteDeputyFromFraction();
+				break;
+			}
+			case "8": {
+				parlament.showAllBribersInFraction();
+				break;
+			}
+			case "9": {
+				parlament.giveBribe();
+				break;
+			}
+			case "10": {
+				parlament.showMaxBriberFromFraction();
+				break;
+			}
+			case "11": {
+				System.exit(11);
+				break;
+			}
 			default: {
 				System.out.println("wrong input");
 			}
 
 			}
-
 		}
 	}
-
 }
